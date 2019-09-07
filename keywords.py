@@ -1,20 +1,7 @@
-trigger_words = ['regis', 
-                'régis', 
-                'tadeu', 
-                'música', 
-                'funk', 
-                'anita', 
-                'anitta', 
-                'carreira', 
-                'internacional',
-                'fix that gub',
-                'pablo',
-                'vittar',
-                'vitar',
-                'raul gil',
-                'kpop',
-                'grenal'
-]
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+trigger_words= ('''regis|régis|tadeu|música|funk|anita|anitta|carreira|internacional|fix that gub|pablo|vittar|vitar|kpop|grenal''')
 
 
 responses = ['Envie um email para registadeu@yahoo.com.br',
