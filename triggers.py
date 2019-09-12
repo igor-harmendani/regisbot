@@ -1,0 +1,1 @@
+trigger_words = ('''REGIS|RÉGIS|TADEU|regis|régis|tadeu|música|funk|anita|anitta|carreira|internacional|fix that gub|pablo|vittar|vitar|kpop|grenal''')

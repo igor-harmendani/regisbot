@@ -10,21 +10,23 @@
 ##      
 ## by Igor Harmendani
 
-import telegram_token
-import logging
+import tokens
 import random
-import keywords
+import twitterAPI
+import triggers
 import re
 from telegram.ext import Updater, BaseFilter, MessageHandler, Filters
 
-bot_token = telegram_token.token
+bot_token = tokens.telegram_token
 updater = Updater(token = bot_token, use_context=True)
 dispatche = updater.dispatcher
 
-def response(update, context): # Respostas que o bot envia
-    context.bot.send_message(chat_id=update.message.chat_id, text = random.choice(keywords.responses)) 
 
-echo_handler = MessageHandler(Filters.regex(keywords.trigger_words), response) # Filtra as palavras chave
+def response(update, context): # Respostas que o bot envia
+    context.bot.send_message(chat_id=update.message.chat_id, text = re.sub(r'https://\S+', '', twitterAPI.registweets()))
+
+
+echo_handler = MessageHandler(Filters.regex(triggers.trigger_words), response) # Filtra as palavras chave
 dispatche.add_handler(echo_handler)
 
 updater.start_polling()
