@@ -9,24 +9,26 @@
 ##          |_|  \_\_____|\_____|_____|_____/     |_/_/    \_\_____/|______|\____/  |____/ \____/  |_|                                                                                                 
 ##      
 ## by Igor Harmendani
+## https://github.com/igor-harmendani/regisbot
+
 
 import tokens
-import random
 import twitterAPI
 import triggers
 import re
-from telegram.ext import Updater, BaseFilter, MessageHandler, Filters
+from telegram.ext import Updater, MessageHandler, Filters
 
 bot_token = tokens.telegram_token
 updater = Updater(token = bot_token, use_context=True)
 dispatche = updater.dispatcher
 
-
-def response(update, context): # Respostas que o bot envia
+# Respostas que o bot envia, retiradas de algum tweet da conta @regisstadeu
+def response(update, context):
     context.bot.send_message(chat_id=update.message.chat_id, text = re.sub(r'https://\S+', '', twitterAPI.registweets()))
 
 
-echo_handler = MessageHandler(Filters.regex(triggers.trigger_words), response) # Filtra as palavras chave
+# Filtro para que o bot seja ativado apenas quando receber uma mensagem contendo uma palavra da lista
+echo_handler = MessageHandler(Filters.regex(triggers.regex_list), response)
 dispatche.add_handler(echo_handler)
 
 updater.start_polling()
