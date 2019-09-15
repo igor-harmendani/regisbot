@@ -4,7 +4,7 @@
 
 ### v2.2
 
-* Ao enviar uma mensagem, o bot agora adiciona uma palavra aleatória deste tweet à lista de palavras-chave, caso algumas condições sejam verdadeiras.
+* Ao enviar uma mensagem, o bot agora adiciona uma palavra aleatória desta à lista de palavras-chave, caso algumas condições sejam verdadeiras.
 * O código foi reorganizado, alguns módulos foram removidos e os comentários foram melhorados significativamente.
 
 ### v2.1
