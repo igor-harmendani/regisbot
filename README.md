@@ -2,6 +2,11 @@
 
 ## O bot do Telegram que não curte Anitta
 
+### v2.2
+
+* Ao enviar uma mensagem, o bot agora adiciona uma palavra aleatória deste tweet à lista de palavras-chave, caso algumas condições sejam verdadeiras.
+* O código foi reorganizado, alguns módulos foram removidos e os comentários foram melhorados significativamente.
+
 ### v2.1
 
 * Melhorias na lista de filtros do regex no arquivo triggers.py. Agora os itens ficam dispostos verticalmente, melhorando o código visualmente e facilitando a manutenção.
